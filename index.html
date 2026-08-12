@@ -6,7 +6,6 @@
 <title>Que Como</title>
 <link rel="manifest" href="manifest.json">
 <style>
-/* Estilos base orientados a la experiencia horizontal / apaisada */
 body { background-color: #111827; color: #f3f4f6; font-family: system-ui, sans-serif; margin: 0; padding: 12px; display: flex; justify-content: center; align-items: center; min-height: 100vh; box-sizing: border-box; }
 .container { width: 100%; max-width: 650px; display: flex; flex-direction: column; gap: 12px; }
 .header { display: flex; align-items: center; gap: 10px; padding: 4px 0; }
@@ -14,18 +13,15 @@ body { background-color: #111827; color: #f3f4f6; font-family: system-ui, sans-s
 h1 { font-size: 1.15rem; margin: 0; }
 .seccion-titulo { font-size: 1rem; font-weight: bold; color: #34d399; border-bottom: 2px solid #374151; padding-bottom: 2px; margin-bottom: 6px; }
 
-/* Grilla principal horizontal de opciones */
 .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
 .btn { background-color: #1f2937; color: #f3f4f6; border: 1px solid #374151; padding: 10px; border-radius: 10px; text-align: left; cursor: pointer; font-size: 13px; font-weight: 500; }
 .btn:active { background-color: #374151; }
 .hidden { display: none !important; }
 
-/* Botón de retroceso */
 .btn-volver { background-color: #1f2937; color: white; border: 1px solid #374151; padding: 4px 10px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; font-size: 13px; margin-bottom: 6px; }
 .btn-volver:active { background-color: #374151; }
 .logo-volver { width: 18px; height: 18px; border-radius: 50%; object-fit: cover; }
 
-/* Ítems de selección */
 .item { background-color: #1f2937; padding: 10px 12px; border-radius: 10px; border: 1px solid #374151; font-weight: 500; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
 .item:active { background-color: #374151; }
 .item-animo { background-color: #1f2937; padding: 10px 12px; border-radius: 10px; border: 1px solid #374151; cursor: pointer; display: flex; flex-direction: column; gap: 2px; }
@@ -33,13 +29,11 @@ h1 { font-size: 1.15rem; margin: 0; }
 .animo-titulo { font-weight: 600; font-size: 14px; color: #f3f4f6; }
 .animo-desc { font-size: 11px; color: #9ca3af; }
 
-/* Pantalla 4: Consejos y Sponsor (Diseño apaisado en dos columnas) */
 .consejos-layout { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 12px; align-items: stretch; }
 .consejos-card { background-color: #1f2937; border: 1px solid #374151; border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 8px; font-size: 13px; }
 .sponsor-card { background-color: #1f2937; border: 1px solid #374151; border-radius: 10px; padding: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 8px; }
 .sponsor-img { width: 60px; height: 60px; object-fit: contain; background-color: #111827; border-radius: 8px; padding: 4px; }
 
-/* Pantalla 5: Gran Final (Foto gigante del plato humeante) */
 .final-card { background-color: #1f2937; border: 1px solid #374151; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; position: relative; }
 .final-img { width: 100%; height: 240px; object-fit: cover; background-color: #374151; }
 .final-info-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(17,24,39,0.95), transparent); padding: 16px 16px 12px 16px; display: flex; flex-direction: column; gap: 4px; }
@@ -58,4 +52,64 @@ h1 { font-size: 1.15rem; margin: 0; }
 </div>
 <div class="seccion-titulo" style="margin-top: 4px;">Base</div>
 <div class="grid">
-<button class="btn" onclick="verGuarn
+<button class="btn" onclick="verGuarniciones('Carnes Rojas')">🥩 Carnes Rojas</button>
+<button class="btn" onclick="verGuarniciones('Cerdo')">🥓 Cerdo</button>
+<button class="btn" onclick="verGuarniciones('Pollo')">🍗 Pollo</button>
+<button class="btn" onclick="verGuarniciones('Pescados / Mariscos')">🐟 Pescados</button>
+<button class="btn" onclick="verVariedad('Masas')">🥖 Masas</button>
+<button class="btn" onclick="verVariedad('Pastas')">🍝 Pastas</button>
+<button class="btn" onclick="verVariedad('Cocina de Olla')">🍲 Olla</button>
+<button class="btn" onclick="verVariedad('Legumbres / Vegetal')">🥔 Legumbres</button>
+</div>
+</div>
+
+<div id="p2" class="hidden">
+<button class="btn-volver" onclick="volverA('p1')">← <img src="icon-192.png" class="logo-volver" alt="Logo"> Inicio</button>
+<div class="seccion-titulo">Guarnición</div>
+<h2 id="titulo-guarnicion" style="color: #34d399; font-size: 14px; margin: 0 0 8px 0;"></h2>
+<div id="lista-guarniciones" style="display: flex; flex-direction: column; gap: 6px;"></div>
+</div>
+
+<div id="p_variedad" class="hidden">
+<button class="btn-volver" onclick="volverA('p1')">← <img src="icon-192.png" class="logo-volver" alt="Logo"> Inicio</button>
+<div class="seccion-titulo">Variedad</div>
+<h2 id="titulo-variedad" style="color: #34d399; font-size: 14px; margin: 0 0 8px 0;"></h2>
+<div id="lista-variedad" style="display: flex; flex-direction: column; gap: 6px;"></div>
+</div>
+
+<div id="p3" class="hidden">
+<button class="btn-volver" onclick="volverA('p1')">← <img src="icon-192.png" class="logo-volver" alt="Logo"> Inicio</button>
+<div class="seccion-titulo">Ánimo</div>
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+<h2 id="subtitulo-final" style="color: #34d399; font-size: 13px; margin: 0;"></h2>
+<span style="font-size: 12px; color: #9ca3af;">¿Cómo encaras la cocina hoy?</span>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px;">
+<div class="item-animo" onclick="verConsejos('Abuela')">
+<span class="animo-titulo">👵 Abuela</span>
+<span class="animo-desc">Cocina lenta y con amor (1h+)</span>
+</div>
+<div class="item-animo" onclick="verConsejos('Rápido')">
+<span class="animo-titulo">⚡ Rápido</span>
+<span class="animo-desc">Al toque / Sin vueltas (15 - 30 min)</span>
+</div>
+<div class="item-animo" onclick="verConsejos('Domingo')">
+<span class="animo-titulo">🍷 Domingo</span>
+<span class="animo-desc">Plato especial y disfrute total</span>
+</div>
+<div class="item-animo" onclick="verConsejos('Liviano')">
+<span class="animo-titulo">🥗 Liviano</span>
+<span class="animo-desc">Algo fresco y exprés</span>
+</div>
+</div>
+</div>
+
+<div id="p_consejos" class="hidden">
+<button class="btn-volver" onclick="volverA('p1')">← <img src="icon-192.png" class="logo-volver" alt="Logo"> Inicio</button>
+<div class="seccion-titulo">Secretos del Chef</div>
+
+<div class="consejos-layout">
+<div class="consejos-card">
+<strong style="color: #34d399;">💡 Recomendación de preparación:</strong>
+<p id="texto-recomendacion" style="margin: 0; color: #d1d5db; line-height: 1.4;">Sellá bien la carne a fuego fuerte
