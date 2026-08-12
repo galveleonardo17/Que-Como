@@ -22,7 +22,7 @@ function verGuarniciones(base) {
     
     let html = "";
     (datosGuarnicion[base] || []).forEach(g => {
-        html += `<div class="item" onclick="verAnimos('${base}', '${g}')">${g} <span>→</span></div>`;
+        html += `<div class="btn" onclick="verAnimos('${base}', '${g}')" style="justify-content: space-between;">${g} <span>→</span></div>`;
     });
     document.getElementById('lista-guarniciones').innerHTML = html;
     window.scrollTo(0,0);
@@ -36,7 +36,7 @@ function verVariedad(base) {
     
     let html = "";
     (datosVariedad[base] || []).forEach(v => {
-        html += `<div class="item" onclick="verAnimos('${base}', '${v}')">${v} <span>→</span></div>`;
+        html += `<div class="btn" onclick="verAnimos('${base}', '${v}')" style="justify-content: space-between;">${v} <span>→</span></div>`;
     });
     document.getElementById('lista-variedad').innerHTML = html;
     window.scrollTo(0,0);
