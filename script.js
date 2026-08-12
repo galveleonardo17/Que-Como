@@ -1,10 +1,10 @@
 let seleccion = { base: '', detalle: '', animo: '' };
 
 const datosGuarnicion = {
-    "Carnes Rojas": ["Papas y Raíces", "Ensaladas", "Vegetales", "Verdes"],
-    "Cerdo": ["Papas y Raíces", "Arroz / Cereales", "Legumbres", "Ensaladas"],
-    "Pollo": ["Papas y Raíces", "Arroz / Cereales", "Vegetales", "Ensaladas", "Legumbres"],
-    "Pescados / Mariscos": ["Papas y Raíces", "Ensaladas", "Arroz / Cereales", "Vegetales"]
+    "Carnes Rojas": ["🥔 Papas y Raíces", "🥗 Ensaladas", "🥦 Vegetales", "🌿 Verdes"],
+    "Cerdo": ["🥔 Papas y Raíces", "🍚 Arroz / Cereales", "🫘 Legumbres", "🥗 Ensaladas"],
+    "Pollo": ["🥔 Papas y Raíces", "🍚 Arroz / Cereales", "🥦 Vegetales", "🥗 Ensaladas", "🫘 Legumbres"],
+    "Pescados / Mariscos": ["🥔 Papas y Raíces", "🥗 Ensaladas", "🍚 Arroz / Cereales", "🥦 Vegetales"]
 };
 
 const datosVariedad = {
